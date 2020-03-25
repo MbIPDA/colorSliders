@@ -31,9 +31,9 @@ class ViewController: UIViewController {
         setTextValue()
         setLabelValue()
         
-        addDoneButtonTo(redText)
-        addDoneButtonTo(greenText)
-        addDoneButtonTo(blueText)
+//        addDoneButtonTo(redText)
+//        addDoneButtonTo(greenText)
+//        addDoneButtonTo(blueText)
         
         redText.tag = 0
         greenText.tag = 1
@@ -120,32 +120,32 @@ extension ViewController: UITextFieldDelegate {
     }
 
 }
-extension ViewController {
-    
-    
-    private func addDoneButtonTo(_ textField: UITextField) {
-        
-        let keyboardToolbar = UIToolbar()
-        textField.inputAccessoryView = keyboardToolbar
-        keyboardToolbar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title:"Done",
-                                         style: .done,
-                                         target: self,
-                                         action: #selector(didTapDone))
-        
-        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
-                                            target: nil,
-                                            action: nil)
-        
-        
-        
-        keyboardToolbar.items = [flexBarButton, doneButton]
-    }
-    
-    @objc private func didTapDone() {
-        view.endEditing(true)
-    }
-    
-    
-}
+//extension ViewController {
+//
+//
+//    private func addDoneButtonTo(_ textField: UITextField) {
+//
+//        let keyboardToolbar = UIToolbar()
+//        textField.inputAccessoryView = keyboardToolbar
+//        keyboardToolbar.sizeToFit()
+//
+//        let doneButton = UIBarButtonItem(title:"Done",
+//                                         style: .done,
+//                                         target: self,
+//                                         action: #selector(didTapDone))
+//
+//        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+//                                            target: nil,
+//                                            action: nil)
+//
+//
+//
+//        keyboardToolbar.items = [flexBarButton, doneButton]
+//    }
+//
+//    @objc private func didTapDone() {
+//        view.endEditing(true)
+//    }
+//
+//
+//}
