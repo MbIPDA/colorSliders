@@ -23,7 +23,6 @@ class ViewController: UIViewController {
     @IBOutlet var greenText: UITextField!
     @IBOutlet var blueText: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +30,14 @@ class ViewController: UIViewController {
         setColor()
         setTextValue()
         setLabelValue()
+        
+        addDoneButtonTo(redText)
+        addDoneButtonTo(greenText)
+        addDoneButtonTo(blueText)
+        
+        redText.tag = 0
+        greenText.tag = 1
+        blueText.tag = 2
         
     }
 
@@ -50,16 +57,12 @@ class ViewController: UIViewController {
         setColor()
     }
     
-    
-    
     private func setColor() {
         colorScreen.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value), alpha: 1)
     }
-    
-   
     
     private func setLabelValue() {
         redLabel.text = string(from: redSlider)
@@ -76,5 +79,73 @@ class ViewController: UIViewController {
     private func string(from slider: UISlider) -> String{
         return String(format: "%.2f", slider.value)
 }
+}
+extension ViewController: UITextFieldDelegate {
+   
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           textField.resignFirstResponder()
+           return true
+       }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+        
+    }
 
+    func textFieldDidEndEditing(_ textField: UITextField) {
+    
+        guard let text = textField.text else { return }
+
+        if let currentValue = Float(text) {
+        redSlider.value = currentValue
+        switch textField.tag {
+        case 0: redSlider.value = currentValue
+        case 1: greenSlider.value = currentValue
+        case 2: blueSlider.value = currentValue
+        default: break
+        }
+        setColor()
+        setLabelValue()
+    } else {
+        showAlert(title:"Wrong format!", message: "Please enter correct value")
+        }
+    }
+    private func showAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAlert = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAlert)
+        present(alert, animated: true)
+
+    }
+
+}
+extension ViewController {
+    
+    
+    private func addDoneButtonTo(_ textField: UITextField) {
+        
+        let keyboardToolbar = UIToolbar()
+        textField.inputAccessoryView = keyboardToolbar
+        keyboardToolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title:"Done",
+                                         style: .done,
+                                         target: self,
+                                         action: #selector(didTapDone))
+        
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                            target: nil,
+                                            action: nil)
+        
+        
+        
+        keyboardToolbar.items = [flexBarButton, doneButton]
+    }
+    
+    @objc private func didTapDone() {
+        view.endEditing(true)
+    }
+    
+    
 }
