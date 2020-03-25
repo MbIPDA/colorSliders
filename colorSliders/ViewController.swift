@@ -81,24 +81,25 @@ class ViewController: UIViewController {
 }
 }
 extension ViewController: UITextFieldDelegate {
-   
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
            textField.resignFirstResponder()
            return true
        }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
-        
+
+
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-    
+
         guard let text = textField.text else { return }
 
         if let currentValue = Float(text) {
-       
+
         switch textField.tag {
         case 0: redSlider.value = currentValue
         case 1: greenSlider.value = currentValue

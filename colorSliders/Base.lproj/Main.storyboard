@@ -104,16 +104,25 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="G44-jr-L9f"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O7J-5x-rfW">
                                                 <rect key="frame" x="0.0" y="44" width="60" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="chO-GT-Kur"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1.00" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HI0-hP-Iji">
                                                 <rect key="frame" x="0.0" y="88" width="60" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="HYe-8n-016"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -150,7 +159,7 @@
                         <outlet property="greenText" destination="O7J-5x-rfW" id="8wU-JU-Z8d"/>
                         <outlet property="redLabel" destination="1bC-nq-Kip" id="lOn-Y4-6pc"/>
                         <outlet property="redSlider" destination="FtC-Is-7e8" id="ehO-px-qXy"/>
-                        <outlet property="redText" destination="WOg-px-4HC" id="79g-iC-3NM"/>
+                        <outlet property="redText" destination="WOg-px-4HC" id="14c-Yu-WhA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
