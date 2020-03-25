@@ -45,6 +45,11 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="f79-5O-F7O"/>
                                         </constraints>
+                                        <color key="minimumTrackTintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="redSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="y0f-YF-lVM"/>
+                                        </connections>
                                     </slider>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4qb-vG-W5Y">
                                         <rect key="frame" x="323" y="0.0" width="50" height="34"/>
@@ -82,6 +87,11 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="qg0-5k-RlZ"/>
                                         </constraints>
+                                        <color key="minimumTrackTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="greenSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="lvK-p0-lJm"/>
+                                        </connections>
                                     </slider>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EUb-Ld-AJd">
                                         <rect key="frame" x="323" y="0.0" width="50" height="34"/>
@@ -119,6 +129,11 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="Lpc-Cs-e7m"/>
                                         </constraints>
+                                        <color key="minimumTrackTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="blueSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="nlK-kX-psP"/>
+                                        </connections>
                                     </slider>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FYK-T3-ufw">
                                         <rect key="frame" x="323" y="0.0" width="50" height="34"/>
@@ -131,7 +146,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.72044677189999995" green="0.71065684399999995" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cjt-wj-l2n" secondAttribute="trailing" constant="21" id="0pT-zc-V2z"/>
                             <constraint firstItem="pXd-Du-0UW" firstAttribute="top" secondItem="PFW-Uf-m5F" secondAttribute="bottom" constant="40" id="Bdq-dj-4hz"/>
@@ -149,6 +164,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="blueLabel" destination="XS4-X4-DSu" id="L6v-3A-TfN"/>
+                        <outlet property="blueSlider" destination="wl9-Ep-F1a" id="yia-kM-g6h"/>
+                        <outlet property="blueText" destination="FYK-T3-ufw" id="gsx-ho-k4a"/>
+                        <outlet property="colorScreen" destination="PFW-Uf-m5F" id="seu-Wm-RDd"/>
+                        <outlet property="greenLabel" destination="ngj-cx-EKw" id="DLJ-l4-sKW"/>
+                        <outlet property="greenSlider" destination="eiM-fR-5Ws" id="5Eo-mN-OQq"/>
+                        <outlet property="greenText" destination="EUb-Ld-AJd" id="PIu-kC-Gpo"/>
+                        <outlet property="redLabel" destination="lnl-tw-c7y" id="5uz-Dp-jb7"/>
+                        <outlet property="redSlider" destination="ugk-Qk-c3O" id="lfb-WJ-mAQ"/>
+                        <outlet property="redText" destination="4qb-vG-W5Y" id="O5O-TP-01m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
